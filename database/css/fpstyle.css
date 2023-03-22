@@ -1,0 +1,353 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: Bahnschrift;
+	background: #B9B9B9 !important;
+}
+
+.bkg{
+	opacity: .75;
+	width: 100%;
+	/*height: 100%;*/
+	position: absolute;
+	z-index: -1;
+}
+
+.space{
+	padding-top: 149px;
+}
+.space2{
+	padding-top: 234px;
+}
+
+.leftside, .rightside{
+	/* height: 45vh; */
+	width: 100%;
+}
+
+
+/**************************************************************************/
+/*                          LEFT SIDE ABOUT                               */
+/**************************************************************************/
+
+.leftside{
+	padding: 20px 0;
+	/*height: 50vh;*/
+}
+
+.wtq{
+	font-size: 4rem;
+	font-weight: 500;
+	color: white; 
+	text-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+.wtq span{
+	font-size: 4rem;
+	font-weight: 500;
+	color: #FFED4E;
+}
+
+.leftside p{
+	margin-top: 10px;
+	/*padding-left: 160px;*/
+	color: white;
+	font-size: 1.5rem;
+	font-weight: 500;
+	text-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+.leftside .btn{
+	font-size: 18px;
+	font-weight: 600;
+	/*margin-left: 160px;*/
+	margin: 20px 0 30px;
+	border: none;
+	height: 45px;
+	width: 180px;
+	background-color: #FFED4E;
+	box-shadow: 3px 3px 6px rgba(0,0,0,.3);
+	border-radius: 20px;
+}
+
+.leftside .btn:hover{
+	box-shadow: inset 0 0 6px #000000;
+}
+
+
+/**************************************************************************/
+/*                          RIGHT SIDE FORM                               */
+/**************************************************************************/
+
+.rightside{
+    background-color: #7BD6FA;
+    box-shadow: 3px 3px 6px;
+}
+
+.left-form-box{
+    padding-top: 40px;
+}
+
+.left-form-box h2 span{
+	background-color: #3D48C9;
+	color: white;
+	padding: 9px 60px 10px 50px;
+	margin-top: 10px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+.left-form-box p{
+	margin: 40px 0 0 50px;
+	font-weight: 500;
+	color: white;
+	text-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+.left-form-box form{
+	margin: 20px 0 0 50px;
+}
+
+.left-form-box h6 span{
+	background-color: #3D48C9;
+	color: white;
+	padding: 5px 40px 8px 10px;
+	margin-bottom: 0;
+	border-top-right-radius: 40px;
+}
+
+.left-form-box .ibox{
+	background-color: rgba(0,0,0,.1);
+	padding-left: 8px;
+	height: 34px;
+	width: 78%;
+	border:2px solid #3D48C9;
+}
+
+.btn-reset{
+	font-size: 18px;
+	font-weight: 600;
+	border: none;
+	height: 45px;
+	width: 200px;
+	background-color: #FFED4E;
+	box-shadow: 3px 3px 6px rgba(0,0,0,.3);
+}
+
+.btn-reset:hover{
+    box-shadow: inset 0 0 6px #000000;
+}
+
+.left-form-box form a{
+	color: #1D58BE;
+	font-weight: 500;
+	text-shadow: none;
+	/*text-decoration: underline;*/
+}
+
+.left-form-box form .f-pass{
+	margin-top: 60px;
+	width: 250px;
+}
+
+.myimg{
+    height: 417px !important;
+}
+
+/**************************************************************************/
+/*                                FOOTER                                  */
+/**************************************************************************/
+
+footer{
+	background-color: #3D48C9;
+}
+
+footer .about-us .au-text{
+	text-align: center;
+	color: white;
+	padding: 20px 0 5px;
+	font-weight: 500;
+	text-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+footer .about-us .disc{
+    text-align: center;
+	color: white;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+footer .about-us{
+	margin-bottom: 20px;
+}
+
+footer .fot{
+	text-align: center;
+	color: white;
+	padding: 18px;
+	font-weight: 500;
+	text-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+footer hr{
+	width: 800px;
+	border-color: white;
+	margin: 0 auto;
+}
+
+/**************************************************************************/
+/*                             Screen Res                                 */
+/**************************************************************************/
+
+
+@media (min-width: 481px) and (max-width: 600px) {
+	
+	.leftside{
+	    padding: 0;
+    }
+    .bkg {
+        height: 50%;
+    }
+    .wtq, .wtq span {
+        font-size: 45px;
+    }
+    .leftside p{
+    	font-size: 15px;
+    	padding: 5px 40px;
+    }
+    .leftside .btn{
+	    font-size: 15px;
+	    font-weight: 600;
+	    height: 35px;
+	    width: 120px;
+	    margin-top: 10px;
+    }
+    .left-form-box .ibox{
+    	width: 300px;
+    }
+    .left-form-box .ibox{
+	    height: 34px;
+	    width: 380px;
+    }
+    .myimg{
+    	visibility: hidden;
+    }
+    .space{
+    	padding-top: 80px;
+    }
+    .space2{
+    	padding-top: 100px;
+    }
+    .left-form-box h2 span{
+    	font-size: 28px;
+    	font-weight: 600;
+	    padding: 9px 40px 10px 30px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+	.leftside{
+	    padding: 10px;
+    }
+	.bkg {
+        height: 50%;
+    }
+	.wtq, .wtq span {
+        font-size: 50px;
+    }
+    .leftside p{
+    	font-size: 15px;
+    	padding: 5px 40px;
+    }
+    .leftside .btn{
+	    font-size: 15px;
+	    font-weight: 600;
+	    height: 35px;
+	    width: 120px;
+	    margin-top: 10px;
+    }
+    .left-form-box .ibox{
+    	width: 300px;
+    }
+    .myimg{
+    	visibility: hidden;
+    }
+    .space2{
+    	padding-top: 142px;
+    }
+    .left-form-box h2 span{
+    	font-size: 28px;
+    	font-weight: 600;
+	    padding: 9px 40px 10px 30px;
+    }
+    .left-form-box form .f-pass{
+	    margin-top: 45px;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1400px) {
+	.leftside{
+	    padding: 10px;
+    }
+	.wtq, .wtq span {
+        font-size: 65px;
+    }
+    .leftside p{
+    	font-size: 16px;
+    	padding: 5px 40px;
+    }
+    .leftside .btn{
+	    font-size: 16px;
+	    font-weight: 600;
+	    height: 40px;
+	    width: 160px;
+	    margin-top: 12px;
+    }
+    .left-form-box .ibox{
+	    height: 34px;
+	    width: 400px;
+    }
+    .myimg{
+    	visibility: hidden;
+    }
+    .left-form-box h2 span{
+    	font-size: 28px;
+    	font-weight: 600;
+	    padding: 9px 40px 10px 30px;
+    }
+}
+
+@media (min-width: 1400px) and (max-width: 1750px) {
+	.leftside{
+	    padding: 20px;
+    }
+	.wtq, .wtq span {
+        font-size: 75px;
+    }
+    .leftside p{
+    	font-size: 18px;
+    	padding: 5px 40px;
+    }
+    .leftside .btn{
+	    font-size: 18px;
+	    font-weight: 600;
+	    height: 40px;
+	    width: 160px;
+	    margin-top: 12px;
+    }
+    .left-form-box .ibox{
+	    height: 34px;
+	    width: 300px;
+    }
+    .left-form-box h2 span{
+    	font-size: 28px;
+    	font-weight: 600;
+	    padding: 9px 40px 10px 30px;
+    }
+    .left-form-box form .f-pass{
+	    margin-top: 45px;
+    }
+}

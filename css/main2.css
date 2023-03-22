@@ -1,0 +1,444 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: Bahnschrift;
+	background: #B9B9B9 !important;
+}
+
+.bkg{
+	opacity: .75;
+	width: 100%;
+	/*height: 100%;*/
+	position: absolute;
+	z-index: -1;
+}
+
+.bg-primary {
+	background-color: #3D48C9 !important;
+}
+
+/**************************************************************************/
+/*                                  NAV                                   */
+/**************************************************************************/
+
+.nav{
+	width: 100%;
+	/* height: 80px; */
+	background-color: #3D48C9;
+}
+
+.navUser img{
+	width: 60px;
+	height: 60px;
+	border: 2px solid black;
+	border-radius: 50%;
+	margin: 0 0 5px 30px;
+}
+.navUser{
+	color: #FFFFFF;
+	font-size: 2rem;
+    font-weight: 600;
+}
+
+.navUser span{
+	padding-left: 8px;
+	text-decoration: none;
+	color: white;
+}
+
+/**************************************************************************/
+/*                             MAIN-CSS                                   */
+/**************************************************************************/
+
+.contaiiner {
+    width: 85%;
+    background: #F7F7F7;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .4);
+    border-radius: 20px;
+    min-height: 600px;
+}
+
+.cl{
+	background-color: #3D48C9;
+	border-radius: 20px;
+	color: white;
+    min-height: 600px;
+}
+
+.cl h1{
+	padding: 5px 15px;
+}
+
+.imgg{
+	float: right;
+	margin-top: 5px;
+	height:40px;
+	width: 40px;
+}
+
+.rightt{
+	width: 75%;
+	height: fit-content;
+	padding: 10px 30px;
+	position: relative;
+}
+
+.rightt img{
+	margin: 13% auto 8px;
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+}
+
+.container {
+	border-radius: 20px;
+	min-height: 600px;
+}
+
+i {
+	color: red;
+	font-size: 20px;
+	transition: .5s ease;
+
+}
+
+
+
+
+/**************************************************************************/
+/*                             USER-CSS                                   */
+/**************************************************************************/
+
+.contaiiiner {
+    width: 85%;
+    padding: 20px;
+    margin: 40px auto;
+    background: #F7F7F7;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .4);
+    border-radius: 20px;
+    height: 600px;
+}
+.contaiiiner hr {
+	border-color: #111111;
+	margin: 0 auto;
+    width: 65%;
+}
+
+.contUser img{
+	width: 120px;
+	height: 120px;
+	border: 2px solid black;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.contUser input{
+    visibility: hidden;
+    width: 10px;
+    position: absolute;
+}
+
+.cptext{
+	color: black;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.contUser{
+	margin: 12px auto 10px;
+	color: #FFFFFF;
+	font-size: 45px;
+    font-weight: 600;
+}
+
+.ai-text{
+	margin: 10px auto !important;
+	text-align: center;
+	font-size: 40px;
+	margin: 20px 0;
+}
+
+.cont{
+	margin: 10px auto;
+}
+
+.cont2{
+	margin: 10px 0;
+}
+
+.sp{
+	padding: 0 41px !important;
+}
+
+.sp2{
+	padding: 0 37px !important;
+}
+
+.butn{
+   margin: 40px auto;
+}
+
+.bn{
+	margin: 20px 100px;
+}
+
+.roww{
+	margin: 10px auto;
+}
+
+/**************************************************************************/
+/*                             LIST STUD                                  */
+/**************************************************************************/
+
+.txt span{
+	color: white;
+	text-decoration: none;
+}
+
+.studName span{
+	font-size: 28px;
+	font-weight: 700;
+	margin: 15px 0 15px 15px;
+}
+
+.studName i{
+	font-size: 18px !important;
+	font-weight: 700;
+	margin: 15px 0 15px 15px;
+}
+
+.students {
+	/*background-color: black;*/
+	margin-left: 10px;
+	margin-top: 9px;
+	/* border-bottom: 1px solid rgba(0,0,0,.2); */
+}
+
+.students img{
+	width: 20px;
+	height: 20px;
+	border: 2px solid black;
+	border-radius: 50%;
+	margin-top: 0px;
+}
+
+.student_img{
+	width: 30px !important;
+	height: 30px !important;
+	border: 2px solid black;
+	border-radius: 50%;
+}
+
+.students span{
+	font-size: 20px;
+}
+
+
+
+.students .btn-primary{
+	background-color: #3B5FC9;
+	border-color: #3B5FC9;
+}
+
+
+.editStud .btn{
+	padding: 5px 30px;
+}
+
+
+
+/**************************************************************************/
+/*                           ADDED CLASS                                  */
+/**************************************************************************/
+
+.nClass{
+	background-color: white;
+	padding: 8px;
+	margin: 10px 0;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+}
+
+.nClass span{
+	color: #323B9F;
+	font-size: 20px;
+	font-weight: 700;
+	padding-left: 10px;
+}
+
+.dropdownn{
+	float: right;
+	margin-right: 10px;
+	margin-top: 2px;
+}
+
+/**************************************************************************/
+/*                                POPUP                                   */
+/**************************************************************************/
+
+.modal-header{
+	background-color: #3D48C9;
+}
+
+.modal-header span{
+	color: white;
+	font-size: 25px;
+	font-weight: 500;
+}
+
+.frm span{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.frm .btn{
+	margin-top: 30px;
+	font-size: 25px;
+}
+
+.close{
+	position: absolute;
+	top: 0;
+	right: 10px;
+	font-size: 30px !important;
+	cursor: pointer;
+	color: white !important;
+}
+
+.modal {
+    text-align: center;
+}
+
+.btnc{
+	background-color: #3D48C9 !important;
+}
+
+/**************************************************************************/
+/*                                FOOTER                                  */
+/**************************************************************************/
+
+/*footer{
+	background-color: #3D48C9;
+}
+
+footer .about-us .au-text{
+	text-align: center;
+	color: white;
+	padding: 20px 0 5px;
+	font-weight: 500;
+	text-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+footer .about-us .disc{
+    text-align: center;
+	color: white;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+footer .about-us{
+	margin-bottom: 20px;
+}
+
+footer .fot{
+	text-align: center;
+	color: white;
+	padding: 18px;
+	font-weight: 500;
+	text-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+footer hr{
+	width: 800px;
+	border-color: white;
+	margin: 0 auto;
+}*/
+
+/**************************************************************************/
+/*                             Screen Res                                 */
+/**************************************************************************/
+
+@media (min-width: 481px) and (max-width: 1000px) {
+	.contaiiiner{
+		height: 650px;
+		margin: 0;
+		width: 100%;
+		border-radius: 0;
+	}
+
+	.contaiiner{
+		margin: 0;
+		width: 100%;
+		border-radius: 0;
+	}
+
+	.cl{
+	    background-color: #3D48C9;
+     	border-radius: 0;
+        height: 200px;
+    }
+
+    .nav{
+    	border-bottom: 1px solid black;
+    }
+
+    .rightt{
+	    width: 100%;
+	    text-align: center;
+     }
+}
+
+
+/* ================================================================ */
+
+@media (min-width: 768px) {
+	.container-small {
+		width: 500px;
+	}
+
+	.container-medium {
+		width: 850px;
+	}
+
+	.container-large {
+		width: 970px;
+	}
+}
+
+@media (min-width: 992px) {
+	.container-small {
+		width: 500px;
+	}
+
+	.container-medium {
+		width: 1000px;
+	}
+
+	.container-large {
+		width: 1170px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container-small {
+		width: 650px;
+	}
+
+	.container-medium {
+		width: 1350px;
+	}
+
+	.container-large {
+		width: 1500px;
+	}
+}
+
+.container-small,
+.container-medium,
+.container-large {
+	max-width: 100%;
+}

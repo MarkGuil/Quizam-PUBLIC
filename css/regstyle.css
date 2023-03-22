@@ -1,0 +1,397 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: Bahnschrift;
+	background: #B9B9B9 !important;
+}
+
+.bkg{
+	opacity: .75;
+	width: 100%;
+	/*height: 100%;*/
+	position: absolute;
+	z-index: -1;
+}
+
+.space{
+	padding-top: 149px;
+}
+.space2{
+	padding-top: 135px;
+}
+
+.leftside, .rightside{
+	/*height: 50vh;*/
+	width: 100%;
+}
+
+
+/**************************************************************************/
+/*                          LEFT SIDE ABOUT                               */
+/**************************************************************************/
+
+.leftside{
+	padding: 80px 0;
+	/*height: 50vh;*/
+}
+
+.wtq{
+	font-size: 4rem;
+	font-weight: 500;
+	color: white; 
+	text-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+.wtq span{
+	font-size: 4rem;
+	font-weight: 500;
+	color: #FFED4E;
+}
+
+.leftside p{
+	margin-top: 10px;
+	/*padding-left: 160px;*/
+	color: white;
+	font-size: 1.5rem;
+	font-weight: 500;
+	text-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+.leftside .btn{
+	font-size: 18px;
+	font-weight: 600;
+	/*margin-left: 160px;*/
+	margin: 20px 0 30px;
+	border: none;
+	height: 45px;
+	width: 180px;
+	background-color: #FFED4E;
+	box-shadow: 3px 3px 6px rgba(0,0,0,.3);
+	border-radius: 20px;
+}
+
+.leftside .btn:hover{
+	box-shadow: inset 0 0 6px #000000;
+}
+
+
+/**************************************************************************/
+/*                          RIGHT SIDE FORM                               */
+/**************************************************************************/
+
+.r {
+  display: flex;
+}
+
+.c {
+  flex: 40%;
+}
+
+.cr {
+  flex: 60%;
+  margin-left: 10px;
+}
+
+.rightside{
+    background-color: #7BD6FA;
+    box-shadow: 3px 3px 6px;
+}
+
+.left-form-box{
+    padding-top: 30px;
+}
+
+.left-form-box h1 span{
+	background-color: #3D48C9;
+	color: white;
+	padding: 9px 60px 10px 50px;
+	margin-top: 10px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+.left-form-box form{
+	margin: 45px 0 0 45px;
+}
+
+.left-form-box h6 span{
+	background-color: #3D48C9;
+	color: white;
+	padding: 5px 40px 8px 10px;
+	margin-bottom: 0;
+	border-top-right-radius: 40px;
+}
+
+.left-form-box  .ibox2{
+	background-color: rgba(0,0,0,.1);
+	padding-left: 8px;
+	height: 34px;
+	width: 100%;
+	border:2px solid #3D48C9;
+}
+
+.left-form-box .ibox{
+	background-color: rgba(0,0,0,.1);
+	padding-left: 8px;
+	height: 34px;
+	width: 100%;
+	border:2px solid #3D48C9;
+}
+
+.btn-reg{
+	font-size: 18px;
+	font-weight: 600;
+	border: none;
+	height: 45px;
+	width: 150px;
+	background-color: #FFED4E;
+	box-shadow: 3px 3px 6px rgba(0,0,0,.3);
+}
+
+.btn-reg:hover{
+    box-shadow: inset 0 0 6px #000000;
+}
+
+.left-form-box form a{
+	color: #1D58BE;
+	font-weight: 500;
+	text-shadow: none;
+	/*text-decoration: underline;*/
+}
+
+.left-form-box form .reg{
+	margin-top: 20px;
+	width: 250px;
+}
+
+.left-form-box form .reg a{
+	margin-left: 5px;
+	/*text-decoration: underline;*/
+}
+
+.left-form-box form .reg p{
+	font-weight: 500;
+	color: white;
+	text-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+.b-box {
+	width: 220px;
+	height: 40px;
+	position: relative;
+	border: 2px solid #3D48C9;
+	border-radius: 30px;
+	background: rgba(255,255,255,.5);
+}
+
+.toggle-bttn {
+	color: white;
+	padding: 6px 24px;
+	cursor: pointer;
+	background: transparent;
+	position: relative;
+	text-align: center;
+    font-weight: 500;
+}
+
+.f-box .b-box button{
+	border: 0;
+	outline: none;
+}
+
+#tc1{
+	color: #3D48C9;
+}
+
+#bttn {
+	left: 0;
+	top: 0;
+	position: absolute;
+	width: 110px;
+	height: 100%;
+	background: #3D48C9;
+	border-radius: 20px;
+	transition: .5s;
+}
+
+.myimg{
+	margin-top: 100px;
+	height: 469.5px !important;
+}
+
+/**************************************************************************/
+/*                                FOOTER                                  */
+/**************************************************************************/
+
+footer{
+	background-color: #3D48C9;
+}
+
+footer .about-us .au-text{
+	text-align: center;
+	color: white;
+	padding: 20px 0 5px;
+	font-weight: 500;
+	text-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+footer .about-us .disc{
+    text-align: center;
+	color: white;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+footer .about-us{
+	margin-bottom: 20px;
+}
+
+footer .fot{
+	text-align: center;
+	color: white;
+	padding: 18px;
+	font-weight: 500;
+	text-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+footer hr{
+	width: 800px;
+	border-color: white;
+	margin: 0 auto;
+}
+
+/**************************************************************************/
+/*                             Screen Res                                 */
+/**************************************************************************/
+
+
+@media (min-width: 481px) and (max-width: 600px) {
+	
+	.leftside{
+	    padding: 0;
+    }
+    .bkg {
+        height: 50%;
+    }
+    .wtq, .wtq span {
+        font-size: 45px;
+    }
+    .leftside p{
+    	font-size: 15px;
+    	padding: 5px 40px;
+    }
+    .leftside .btn{
+	    font-size: 15px;
+	    font-weight: 600;
+	    height: 35px;
+	    width: 120px;
+	    margin-top: 10px;
+    }
+    .left-form-box form .reg{
+	    margin-top: 5px;
+    }
+    .myimg{
+    	visibility: hidden;
+    	height: 0 !important;
+    	width: 0 !important;
+    }
+    .space{
+    	padding-top: 80px;
+    }
+    .space2{
+    	padding-top: 100px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+	.leftside{
+	    padding: 100px;
+    }
+	.bkg {
+        height: 50%;
+    }
+	.wtq, .wtq span {
+        font-size: 50px;
+    }
+    .leftside p{
+    	font-size: 15px;
+    	padding: 5px 40px;
+    }
+    .leftside .btn{
+	    font-size: 15px;
+	    font-weight: 600;
+	    height: 35px;
+	    width: 120px;
+	    margin-top: 10px;
+    }
+    .left-form-box form .reg{
+	    margin-top: 5px;
+    }
+    .myimg{
+    	visibility: hidden;
+    	height: 0 !important;
+    	width: 0 !important;
+    }
+    .space2{
+    	padding-top: 142px;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1400px) {
+	.leftside{
+	    padding: 80px;
+    }
+	.wtq, .wtq span {
+        font-size: 65px;
+    }
+    .leftside p{
+    	font-size: 16px;
+    	padding: 5px 40px;
+    }
+    .leftside .btn{
+	    font-size: 16px;
+	    font-weight: 600;
+	    height: 40px;
+	    width: 160px;
+	    margin-top: 12px;
+    }
+    .left-form-box form .reg{
+	    margin-top: 5px;
+    }
+    .myimg{
+    	visibility: hidden;
+    	height: 0 !important;
+    	width: 0 !important;
+    }
+
+}
+
+@media (min-width: 1400px) and (max-width: 1750px) {
+	.leftside{
+	    padding: 80px;
+    }
+	.wtq, .wtq span {
+        font-size: 75px;
+    }
+    .leftside p{
+    	font-size: 18px;
+    	padding: 5px 40px;
+    }
+    .leftside .btn{
+	    font-size: 18px;
+	    font-weight: 600;
+	    height: 40px;
+	    width: 160px;
+	    margin-top: 12px;
+    }
+    .left-form-box form .reg{
+	    margin-top: 5px;
+    }
+    .myimg{
+	    height: 429.5px !important;
+    }
+    
+}

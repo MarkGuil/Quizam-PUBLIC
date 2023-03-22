@@ -1,0 +1,259 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: Bahnschrift;
+	background: #B9B9B9 !important;
+}
+
+.bkg{
+	opacity: .75;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: -1;
+}
+
+/**************************************************************************/
+/*                                  NAV                                   */
+/**************************************************************************/
+
+.nav{
+	width: 100%;
+	background-color: #3D48C9;
+}
+
+.navUser img{
+	width: 60px;
+	height: 60px;
+	border: 2px solid black;
+	border-radius: 50%;
+	margin: 0 0 5px 30px;
+}
+.navUser{
+	color: #FFFFFF;
+	font-size: 2rem;
+    font-weight: 600;
+}
+
+.navUser span{
+	padding-left: 8px;
+	text-decoration: none;
+	color: white;
+}
+
+.bg-primary {
+	background-color: #3D48C9 !important;
+}
+
+/**************************************************************************/
+/*                             MAIN-CSS                                   */
+/**************************************************************************/
+
+.contaiiner {
+    width: 85%;
+    margin: 40px auto;
+    background: #F7F7F7;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .4);
+    border-radius: 20px;
+    min-height: 600px;
+}
+
+.cl{
+	background-color: #3D48C9;
+	border-radius: 20px;
+	color: white;
+    min-height: 600px;
+}
+
+.cl h1{
+	padding: 5px 15px;
+}
+
+.imgg{
+	float: right;
+	margin-top: 5px;
+	height:40px;
+	width: 40px;
+}
+
+.rightt{
+	width: 75%;
+	height: 600px;
+}
+
+.rightt img{
+	margin: 13% auto 8px;
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+}
+
+
+/**************************************************************************/
+/*                             USER-CSS                                   */
+/**************************************************************************/
+
+.contaiiiner {
+    width: 85%;
+    padding: 20px;
+    margin: 40px auto;
+    background: #F7F7F7;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .4);
+    border-radius: 20px;
+    height: 600px;
+}
+.contaiiiner hr {
+	border-color: #111111;
+	margin: 0 auto;
+    width: 65%;
+}
+
+.contUser img{
+	width: 120px;
+	height: 120px;
+	border: 2px solid black;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.contUser input{
+    visibility: hidden;
+    width: 10px;
+    position: absolute;
+}
+
+.cptext{
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.cptext{
+	color: black;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.contUser{
+	margin: 12px auto 10px;
+	color: #FFFFFF;
+	font-size: 45px;
+    font-weight: 600;
+}
+
+.ai-text{
+	margin: 10px auto !important;
+	text-align: center;
+	font-size: 40px;
+	margin: 20px 0;
+}
+
+.cont{
+	margin: 10px auto;
+}
+
+.cont2{
+	margin: 10px 0;
+}
+
+.sp{
+	padding: 0 41px !important;
+}
+
+.sp2{
+	padding: 0 37px !important;
+}
+
+.butn{
+   margin: 40px auto;
+}
+
+.bn{
+	margin: 20px 100px;
+}
+
+.roww{
+	margin: 10px auto;
+}
+
+/**************************************************************************/
+/*                                FOOTER                                  */
+/**************************************************************************/
+
+footer{
+	background-color: #3D48C9;
+}
+
+footer .about-us .au-text{
+	text-align: center;
+	color: white;
+	padding: 20px 0 5px;
+	font-weight: 500;
+	text-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+footer .about-us .disc{
+    text-align: center;
+	color: white;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+footer .about-us{
+	margin-bottom: 20px;
+}
+
+footer .fot{
+	text-align: center;
+	color: white;
+	padding: 18px;
+	font-weight: 500;
+	text-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+footer hr{
+	width: 800px;
+	border-color: white;
+	margin: 0 auto;
+}
+
+/**************************************************************************/
+/*                             Screen Res                                 */
+/**************************************************************************/
+
+@media (min-width: 481px) and (max-width: 1000px) {
+	.contaiiiner{
+		height: 650px;
+		margin: 0;
+		width: 100%;
+		border-radius: 0;
+	}
+
+	.contaiiner{
+		margin: 0;
+		width: 100%;
+		height: 800px;
+		border-radius: 0;
+	}
+
+	.cl{
+	    background-color: #3D48C9;
+     	border-radius: 0;
+        height: 200px;
+    }
+
+    .nav{
+    	border-bottom: 1px solid black;
+    }
+
+
+
+    .rightt{
+	    width: 100%;
+	    text-align: center;
+     }
+}
+
+
