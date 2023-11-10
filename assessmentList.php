@@ -38,6 +38,7 @@ function type($code)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>List</title>
     <link rel="stylesheet" type="text/css" href="css/main2.css">
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
     <?php include 'extentions/bootstrap.php' ?>
 
     <style>
@@ -113,7 +114,6 @@ function type($code)
                             <th scope="col" class="">Date</th>
                             <th scope="col" class="">Time Start</th>
                             <th scope="col" class="">Time End</th>
-                            <!-- <th scope="col" class="text-center">Randomize Questions</th> -->
                             <th scope="col" class="">Actions</th>
                         </tr>
                     </thead>
@@ -128,7 +128,6 @@ function type($code)
 
                                     <td><?= date("h:i a", strtotime($details['time_start']))  ?></td>
                                     <td><?= date("h:i a", strtotime($details['time_end'])) ?></td>
-                                    <!-- <td class="text-center"><?= description($details['randomize']); ?></td> -->
                                     <td class="pl-5 ">
                                         <form action="" method="Post">
                                             <button name='preview' class="btn btn-outline-secondary ml-5" value="<?= $details['id']; ?>" type="submit">View</button>
@@ -152,7 +151,7 @@ function type($code)
     </div>
     <div class="modal shadow text-left" id="myModal">
         <form action="" method="post">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header bg-primary text-light">
                         <header>
@@ -184,20 +183,10 @@ function type($code)
                                 <h5>Time End</h5>
                             </label>
                             <input id="end" name="newtimeEnd" class="form-control" type="time" required value="<?= $_SESSION['currentAssessment']['time_end']; ?>">
-                            <!-- <div class="custom-control custom-checkbox mt-3">
-
-                                <?php if ($_SESSION['currentAssessment']['randomize'] == 1) { ?>"
-                                <input type="checkbox" checked value="1" class="custom-control-input" id="customCheck" name="newrandomize">
-                                <?php } else { ?>"
-                                <input type="hidden" value="0" name="newrandomize">
-                                <input type="checkbox" value="1" class="custom-control-input" id="customCheck" name="newrandomize">
-                            <?php } ?>
-                            <label class="custom-control-label" for="customCheck"> Shuffle Questions</label>
-                            </div> -->
                         </div>
                         <div class="modal-footer text-dark">
                             <div class="form-inline col justify-content-between">
-                                <button id="cancelBtn" class="m-2 btn btn-outline-dark" type="" style="width:30%;">Cancel</button>
+                                <button id="cancelBtn" class="m-2 btn btn-outline-dark" type="submit" name="cancelUpdate" style="width:30%;">Cancel</button>
                                 <button id="btnUpdateDetails" class="m-2 btn btn-secondary" type="submit" style="width:30%;" name="btnModify">Update</button>
                             </div>
 

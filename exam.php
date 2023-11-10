@@ -42,6 +42,7 @@ if (!$_SESSION['randomized']) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Assessment</title>
     <link rel="stylesheet" type="text/css" href="css/main2.css">
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
     <?php include 'extentions/bootstrap.php' ?>
 
 </head>
@@ -61,11 +62,10 @@ if (!$_SESSION['randomized']) {
     }
 </style>
 
-<body>
-
+<body class="vh-100">
 
     <?php include "extentions/navbar.php" ?>
-    <div class="container mt-5 mb-5">
+    <div id="mainSection" class="container d-flex justify-content-center align-items-center flex-column">
         <div class="row mt-2">
             <div class="col col-lg-12 shadow p-0">
 
@@ -164,7 +164,6 @@ if (!$_SESSION['randomized']) {
                                         <input type="hidden" name="answer" value="No Answer">
                                         <?php while ($choice = $options->fetch_assoc()) { ?>
                                             <input style="width:20px;height:20px;" class="ml-5" type="radio" name="answer" id="" value="<?= $choice['option']; ?>" required><label class="ml-5" for=""><?= $choice['option']; ?></label><br>
-
                                         <?php } ?>
                                     <?php } ?>
                                     <!--=============================True or Falls=====================================-->
@@ -210,7 +209,8 @@ if (!$_SESSION['randomized']) {
                                         <div class="form-group">
                                             <input type="hidden" name="points" value="<?php print_r($datas['points']); ?>">
                                             <input type="hidden" name="question_id" value="<?php print_r($datas['id']) ?>">
-                                            <input type="text" name="answer" id="" class="form-control p-5" required>
+                                            <!-- <input type="text" name="answer" id="" class="form-control p-5" required> -->
+                                            <textarea rows="4" cols="4" name="answer" maxlength="200" style="resize:none;"></textarea>
                                         </div>
                                     <?php } ?>
                                     <!--=============================Essay=====================================-->
@@ -233,7 +233,8 @@ if (!$_SESSION['randomized']) {
                                         <div class="form-group">
                                             <input type="hidden" name="points" value="<?php print_r($datas['points']); ?>">
                                             <input type="hidden" name="question_id" value="<?php print_r($datas['id']) ?>">
-                                            <input type="text" name="answer" id="" class="form-control p-5" required>
+                                            <!-- <input type="text" name="answer" id="" class="form-control p-5" required> -->
+                                            <textarea rows="4" cols="4" name="answer" maxlength="200" style="resize:none;"></textarea>
                                         </div>
                                     <?php } ?>
                                     <div class="space p-5"></div>
@@ -310,6 +311,16 @@ if (!$_SESSION['randomized']) {
     <script src="js/preview.js">
     </script>
     <script type="text/javascript">
+        const navbar = document.querySelector(".navbar");
+        const mainSection = document.querySelector("#mainSection");
+        reportWindowSize()
+
+        function reportWindowSize() {
+            mainSection.style.height = (window.innerHeight - navbar.offsetHeight) + "px";
+        }
+
+        window.onresize = reportWindowSize;
+
         window.onbeforeunload = function() {
             event.preventDefault();
             // return "reloading page will move you to the next question. Are you sure you want to continue?";

@@ -3,48 +3,43 @@
 include "controller.php";
 
 $_SESSION['modifyPoints'] =false;
-
-
  
 if(isset($_POST['studentViewAssessment'])){
-  
     $_SESSION['loadAssessments'] = $_POST['studentViewAssessment'];
     header("location:studentAssessmentList.php");
-
 }
 
  
 if(isset($_POST['completed'])){
     $_SESSION['classroomId'] = $_POST['completed'];
     header("location:completed.php");
-
 }
 
 if(isset($_POST['backToDash'])){
-    header("location:studentDashboard.php");
+    header("location:studentMain.php");
 }
 
 if(isset($_POST['backToTeacherDash'])){
-    header("location:classInfo.php");
+    header("location:Main.php");
 }
 
+if(isset($_POST['backToViewScore'])){
+    header("location:showAssessments.php");
+}
 
 if(isset($_POST['showStudentScores'])){
- $_SESSION['presentId'] = $_POST['showStudentScores'];
+    $_SESSION['presentId'] = $_POST['showStudentScores'];
  header("location:viewScore.php");
-
 }
 
 if(isset($_POST['available'])){
- 
-        $_SESSION['currentAssessment'] = $_POST['available'];
-        $_SESSION['index'] = 0;
-        $_SESSION['randomized'] = false;
-        $_SESSION['taken'] = false;
-        take($_SESSION['currentAssessment'],$_SESSION['currentUser']['id']);
-        header("location:exam.php");
+    $_SESSION['currentAssessment'] = $_POST['available'];
+    $_SESSION['index'] = 0;
+    $_SESSION['randomized'] = false;
+    $_SESSION['taken'] = false;
+    take($_SESSION['currentAssessment'],$_SESSION['currentUser']['id']);
+    header("location:exam.php");
 }
- 
 
 if(isset($_POST['reviewQuestions'])){
     
@@ -75,8 +70,5 @@ if(isset($_POST['saveNewPoints'])){
     modifyPointsInResponse($id,$newVal);
   
 }
-
-
-
 
 ?>

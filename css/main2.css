@@ -5,7 +5,7 @@
 
 body{
 	font-family: Bahnschrift;
-	background: #B9B9B9 !important;
+	/* background: #B9B9B9 !important; */
 }
 
 .bkg{
@@ -30,13 +30,6 @@ body{
 	background-color: #3D48C9;
 }
 
-.navUser img{
-	width: 60px;
-	height: 60px;
-	border: 2px solid black;
-	border-radius: 50%;
-	margin: 0 0 5px 30px;
-}
 .navUser{
 	color: #FFFFFF;
 	font-size: 2rem;
@@ -53,6 +46,10 @@ body{
 /*                             MAIN-CSS                                   */
 /**************************************************************************/
 
+#mainSection {
+
+}
+
 .contaiiner {
     width: 85%;
     background: #F7F7F7;
@@ -61,11 +58,35 @@ body{
     min-height: 600px;
 }
 
+.details {
+	height: 60%;
+	display: grid;
+	grid-template-rows: 5fr 5fr;
+}
+
+.upper,
+.lower {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+
+.classroomName {
+	height: 290px;
+	/* width: 270px; */
+	border-radius: 5px;
+}
+
+.class-icon {
+	font-size: 40px;
+	color: orange;
+}
+
 .cl{
+	min-width: 300px;
 	background-color: #3D48C9;
-	border-radius: 20px;
 	color: white;
-    min-height: 600px;
+    /* min-height: 600px; */
 }
 
 .cl h1{
@@ -254,26 +275,30 @@ i {
 /*                           ADDED CLASS                                  */
 /**************************************************************************/
 
-.nClass{
-	background-color: white;
-	padding: 8px;
-	margin: 10px 0;
-	border-bottom-right-radius: 10px;
-	border-top-right-radius: 10px;
-	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+.nClass span{
+	font-size: 15px;
+	font-weight: 700;
 }
 
-.nClass span{
-	color: #323B9F;
-	font-size: 20px;
-	font-weight: 700;
-	padding-left: 10px;
+.nClass button.btn:hover {
+	background-color: #fff !important;
+	color: #3B5FC9 !important;
+	transition: all .2s ease-in-out;
+}
+
+.nClass button.active {
+	background-color: #fff !important;
+	color: #3B5FC9 !important;
 }
 
 .dropdownn{
 	float: right;
 	margin-right: 10px;
 	margin-top: 2px;
+}
+
+#classDropdownSection{
+	display: none;
 }
 
 /**************************************************************************/
@@ -362,7 +387,7 @@ footer hr{
 /*                             Screen Res                                 */
 /**************************************************************************/
 
-@media (min-width: 481px) and (max-width: 1000px) {
+@media  (max-width: 576px) {
 	.contaiiiner{
 		height: 650px;
 		margin: 0;
@@ -378,13 +403,18 @@ footer hr{
 
 	.cl{
 	    background-color: #3D48C9;
-     	border-radius: 0;
-        height: 200px;
+		min-height: fit-content;
     }
 
     .nav{
     	border-bottom: 1px solid black;
     }
+
+	.classroomName {
+		height: 290px;
+		/* width: 190px; */
+		border-radius: 5px;
+	}
 
     .rightt{
 	    width: 100%;

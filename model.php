@@ -479,7 +479,7 @@ function reviewScores($studentId, $assessment)
 function loadAssessments($class_id)
 {
     $mysql = connect();
-    $result = $mysql->query("SELECT * FROM `assessments` WHERE `class_id`='$class_id' ORDER BY `assessment_type`");
+    $result = $mysql->query("SELECT * FROM `assessments` WHERE `class_id`='$class_id' ORDER BY `date` DESC");
     return $result;
 }
 

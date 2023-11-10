@@ -19,6 +19,7 @@ if (!isActive() or $_SESSION['currentUser']['user_type'] != 1)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Main</title>
     <link rel="stylesheet" type="text/css" href="css/main2.css">
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
     <?php include 'extentions/bootstrap.php' ?>
 
     <style>
@@ -62,7 +63,7 @@ if (!isActive() or $_SESSION['currentUser']['user_type'] != 1)
                         </div>
                         <div class="col text-end">
                             <form class="" action="controllerPart2.php" method="Post">
-                                <button class="btn btn-warning" name="backToTeacherDash">Back</button>
+                                <button class="btn btn-warning" name="backToViewScore">Back</button>
                             </form>
                         </div>
                     </div>

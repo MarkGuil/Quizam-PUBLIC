@@ -95,6 +95,12 @@ if (isset($_POST['createClass'])) {
   //local function
   createClassroom($_POST['classroomName'], $_POST['classCode']);
 }
+
+if(isset($_POST['createClassInvalid'])) {
+  $_SESSION['uniqueRoom'] = true;
+  header('location:Main.php');
+}
+
 if (isset($_POST['savePic'])) {
   $email = $_SESSION['currentUser']['email'];
   $path = uploadFile($_FILES['picture'], $email);
@@ -326,12 +332,12 @@ if (isset($_POST['editNameCancelled'])) {
 
 if (isset($_POST['classInfo'])) {
   $_SESSION['currentClassId'] = $_POST['classId'];
-  header('location:classInfo.php');
+  header('location:Main.php');
 }
 
 if (isset($_POST['studentDash'])) {
   $_SESSION['currentClassId'] = $_POST['classId'];
-  header('location:studentDashboard.php');
+  header('location:studentMain.php');
 }
 
 
@@ -345,6 +351,7 @@ if (isset($_POST['roomRename'])) {
 }
 if (isset($_POST['renameRoomCancelled'])) {
   $_SESSION['roomRenamed'] = true;
+  header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
 
 if (isset($_POST['deleteClass'])) {
@@ -408,6 +415,7 @@ if (isset($_POST['btnclassSearch'])) {
 if (isset($_POST['sendRequest'])) {
   sendRequest($_SESSION['currentUser']['id'], $_SESSION['classInformation']['teacher_id'], $_SESSION['classInformation']['classroom_id']);
   $_SESSION['requestSent'] = true;
+  header('location:studentMain.php');
 }
 // =====================================Exam============================================
 
@@ -450,11 +458,16 @@ if (isset($_POST['btnModify'])) {
     $randomize = $_POST['newrandomize'];
 
   updateAssessment($id, $title, $time_start, $time_end, $randomize, $date);
+  header("location:assessmentList.php");
 }
 
+if(isset($_POST['cancelUpdate'])) {
+  header("location:assessmentList.php");
+}
 
 if (isset($_POST['deleteAssessment'])) {
   deleteAssessment($_POST['deleteAssessment']);
+  header("location:assessmentList.php");
 }
 
 

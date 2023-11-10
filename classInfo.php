@@ -15,6 +15,7 @@ if (!isActive() or $_SESSION['currentUser']['user_type'] != 1)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Main</title>
     <link rel="stylesheet" type="text/css" href="css/main2.css">
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
     <?php include 'extentions/bootstrap.php' ?>
 
     <style>
@@ -32,8 +33,6 @@ if (!isActive() or $_SESSION['currentUser']['user_type'] != 1)
         }
 
         .classroomName {
-            margin-top: 30px;
-
             height: 300px;
             width: 250px;
             border-radius: 5px;
@@ -62,10 +61,9 @@ if (!isActive() or $_SESSION['currentUser']['user_type'] != 1)
 
     <?php include "extentions/navbar.php" ?>
 
-    <div class="container bg-light  mt-5 px-3 px-lg-5 py-5" style="min-height: 900px;">
+    <div class="container bg-light my-5 px-3 px-lg-5 py-5">
 
         <div class="text-center text-center justify-content-around">
-            <!-- <h3 class="mt-3 text-primary"></h3> -->
             <div class="row">
                 <div class="col text-start">
                     <h3 class="">Class Information</h3>
@@ -78,78 +76,78 @@ if (!isActive() or $_SESSION['currentUser']['user_type'] != 1)
             </div>
             <br>
 
-            <div class="upper">
-                <div class="classroomName d-flex flex-column border">
-                    <div class="icons p-5">
-                        <i class="fas fa-file-code"></i>
-                    </div>
-                    <div class="description p-1 ">
+            <div class="">
+                <form action="" class="d-flex justify-content-center align-content-around flex-wrap gap-3" method="POST">
+                    <div class="classroomName d-flex flex-column border">
+                        <div class="icons p-5">
+                            <i class="fas fa-file-code"></i>
+                        </div>
+                        <div class="description p-1 ">
 
-                        <h4 class="text- font-weight-bold"><?= $room['classCode']; ?></h4>
-                        <br>
-                        <h5>Class Code</h5>
+                            <h4 class="text- font-weight-bold"><?= $room['classCode']; ?></h4>
+                            <br>
+                            <h5>Class Code</h5>
+                        </div>
                     </div>
-                </div>
-                <div class="classroomName d-flex flex-column border">
-                    <div class="icons p-5">
-                        <i class="fas fa-tags"></i>
-                    </div>
-                    <div class="description p-1">
-                        <h4 class="text- font-weight-bold"><?= $room['class_name']; ?></h4>
-                        <br>
-                        <div class="dropdown">
-                            <button class="btn btn-outline-warning text-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Class Name
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <form action="" method="POST">
+                    <div class="classroomName d-flex flex-column border">
+                        <div class="icons p-5">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <div class="description p-1">
+                            <h4 class="text- font-weight-bold"><?= $room['class_name']; ?></h4>
+                            <br>
+                            <div class="dropdown">
+                                <button class="btn btn-outline-warning text-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Class Name
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <input id='classId' type="hidden" name="classId" value="<?= $room['classroom_id']; ?>">
                                     <button class="btn btn-light" type="submit" name="editName" style="width: 100%;">Rename Classroom</button>
                                     <button class="btn btn-light" type="submit" name="deleteClass" style="width: 100%;">Delete Classroom</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="classroomName d-flex flex-column border">
-                    <div class="icons p-5">
-                        <i class="fas fa-users"></i>
+                    <div class="classroomName d-flex flex-column border">
+                        <div class="icons p-5">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="description p-1">
+                            <h4 class="text- font-weight-bold"><?= studentCount($_SESSION['currentClassId']); ?></h4>
+                            <br>
+                            <button class="btn btn-outline-warning text-dark" type="submit" name="viewStudentList">Students</button>
+                        </div>
                     </div>
-                    <div class="description p-1">
-                        <h4 class="text- font-weight-bold"><?= studentCount($_SESSION['currentClassId']); ?></h4>
-                        <br>
-                        <button class="btn btn-outline-warning text-dark" type="submit" name="viewStudentList">Students</button>
+                    <div class="classroomName d-flex flex-column border">
+                        <div class="icons p-5">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="description p-1">
+                            <h4 class="text- font-weight-bold"><?= requestCount($_SESSION['currentClassId']); ?></h4>
+                            <br>
+                            <button class="btn btn-outline-warning text-dark" name="viewRequest" type="submit">Requests</button>
+                        </div>
                     </div>
-                </div>
-                <div class="classroomName d-flex flex-column border">
-                    <div class="icons p-5">
-                        <i class="fas fa-user-plus"></i>
+                    <div class="classroomName d-flex flex-column border">
+                        <div class="icons p-5">
+                            <i class="fas fa-scroll"></i>
+                        </div>
+                        <div class="description p-1">
+                            <h4 class="text- font-weight-bold">Exams/Quizes</h4>
+                            <br>
+                            <button class="btn btn-outline-warning text-dark" name="viewList">View</button>
+                        </div>
                     </div>
-                    <div class="description p-1">
-                        <h4 class="text- font-weight-bold"><?= requestCount($_SESSION['currentClassId']); ?></h4>
-                        <br>
-                        <button class="btn btn-outline-warning text-dark" name="viewRequest" type="submit">Requests</button>
+                    <div class="classroomName d-flex flex-column border">
+                        <div class="icons p-5">
+                            <i class="fas fa-poll-h"></i>
+                        </div>
+                        <div class="description p-1">
+                            <h4 class="text- font-weight-bold">Scores</h4>
+                            <br>
+                            <button class="btn btn-outline-warning text-dark" name="viewScores">View</button>
+                        </div>
                     </div>
-                </div>
-                <div class="classroomName d-flex flex-column border">
-                    <div class="icons p-5">
-                        <i class="fas fa-scroll"></i>
-                    </div>
-                    <div class="description p-1">
-                        <h4 class="text- font-weight-bold">Exams/Quizes</h4>
-                        <br>
-                        <button class="btn btn-outline-warning text-dark" name="viewList">View</button>
-                    </div>
-                </div>
-                <div class="classroomName d-flex flex-column border">
-                    <div class="icons p-5">
-                        <i class="fas fa-poll-h"></i>
-                    </div>
-                    <div class="description p-1">
-                        <h4 class="text- font-weight-bold">Scores</h4>
-                        <br>
-                        <button class="btn btn-outline-warning text-dark" name="viewScores">View</button>
-                    </div>
-                </div>
                 </form>
             </div>
 

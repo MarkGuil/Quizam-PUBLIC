@@ -51,6 +51,7 @@ function ends($date, $time)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Main</title>
     <link rel="stylesheet" type="text/css" href="css/main2.css">
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
     <?php include 'extentions/bootstrap.php' ?>
 
     <style>
@@ -113,22 +114,18 @@ function ends($date, $time)
                                                 <td><?= date("h:i a", strtotime($data['time_end'])) ?></td>
 
                                                 <?php
-
-
                                                 if (
                                                     intval(strtotime($today['NOW()'])) >= intval(start($data['date'], $data['time_start'])) and
                                                     intval(strtotime($today['NOW()'])) <= intval(ends($data['date'], $data['time_end']))
 
                                                 ) {
-
                                                 ?>
                                                     <td><button class="btn btn-success" name="available" value="<?= $data['id'] ?>">Available</button></td>
+                                                <?php } else { ?>
+                                                    <td><button class="btn btn-outline-danger" disabled>Not Available</button></td>
+                                                <?php } ?>
                                             </tr>
-                                        <?php } else { ?>
-                                            <td><button class="btn btn-outline-danger" disabled>Not Available</button></td>
-                                        <?php } ?>
-                                        </tr>
-                                <?php }
+                                        <?php }
                                     }
                                 } else { ?>
                                 <tr>

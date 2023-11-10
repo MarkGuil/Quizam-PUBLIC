@@ -12,6 +12,7 @@ if (!isActive())
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>View Info</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
     <?php include 'extentions/bootstrap.php' ?>
 </head>
 
@@ -22,7 +23,7 @@ if (!isActive())
         <h1 class="ai-text my-4">Account Information</h1>
         <div class="cont col-sm-6 col-sm-offset-6">
             <div class="text-xs-center text-lg-center mb-4">
-                <div class="contUser"><img src="<?= $_SESSION['currentUser']['pic_path']; ?>" alt=""></div>
+                <div class="contUser"><img class="object-fit-cover" src="<?= $_SESSION['currentUser']['pic_path']; ?>" alt=""></div>
             </div>
             <div class="input-group input-group-lg">
                 <span class="input-group-text" id="inputGroup-sizing-lg">Full Name</span>

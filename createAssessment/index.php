@@ -8,7 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Login</title>
-  <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
 
   <?php include '../extentions/bootstrap.php' ?>
   <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
@@ -23,20 +22,18 @@
 
 <body style=" background: rgb(241, 240, 240) !important;">
 
-  <nav class="navbar navbar-light bg-primary justify-content-between shadow px-sm-2 px-lg-5">
+  <nav class="navbar navbar-light bg-primary justify-content-between shadow px-sm-2 px-lg-2">
     <div class="navUser">
       <a class="navbar-brand">
-        <a href="Main.php" class="text-decoration-none">
-          <span>
-            Quizam
-          </span>
+        <a href="../Main.php" class="text-decoration-none">
+          <img class="border-0 rounded-0" src="../img/logo.svg" width="160px" height="50px" alt="">
         </a>
       </a>
     </div>
     <form class="d-flex" action="../controller.php" method="Post">
       <div class="dropdown">
         <button class="btn btn-link dropdown-toggle text-light text-decoration-none me-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <img class="border border-dark rounded-circle me-2" src="../<?= $_SESSION['currentUser']['pic_path']; ?>" width="40px" height="40px" alt="">
+          <img class="border border-dark rounded-circle me-2 object-fit-cover" src="../<?= $_SESSION['currentUser']['pic_path']; ?>" width="40px" height="40px" alt="">
           <span>
             <?= $_SESSION['currentUser']['first_name']; ?><?= "  " . $_SESSION['currentUser']['last_name']; ?>
           </span>
@@ -145,13 +142,6 @@
               <h5 class="text-dark my-2">
                 Randomizer
               </h5>
-              <!-- </label> -->
-              <!-- <input type="text" value="0" name="randomize"> -->
-              <!-- <input class="" type="radio" name="randomize" value="1" id="" required>
-              <label class="" for="">True</label>
-
-              <input class="" type="radio" name="randomize" value="0" id="">
-              <label class="" for="">False</label> -->
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="randomize" value="1" id="flexRadioDefault1" required>
                 <label class="form-check-label" for="flexRadioDefault1">

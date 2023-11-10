@@ -12,6 +12,7 @@ include 'controller.php';
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Verify</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
 	<?php include 'extentions/bootstrap.php' ?>
 </head>
 

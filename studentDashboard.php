@@ -16,6 +16,7 @@ if (!isActive() or $_SESSION['currentUser']['user_type'] != 2)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Main</title>
     <link rel="stylesheet" type="text/css" href="css/main2.css">
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
     <?php include 'extentions/bootstrap.php' ?>
 
     <style>

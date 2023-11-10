@@ -50,13 +50,14 @@ a{
 .modal-footer {
   border: 0 none;
 }
+
 #top div {
   margin-left: 1em;
-  height: 12px;
-  width: 12px;
+  height: 16px;
+  width: 10px;
   border-radius: 100%;
-
 }
+
 label{
   color:gray;
  
@@ -76,13 +77,6 @@ label{
 	background-color: #3D48C9;
 }
 
-.navUser img{
-	width: 60px;
-	height: 60px;
-	border: 2px solid black;
-	border-radius: 50%;
-	margin: 0 0 5px 30px;
-}
 .navUser{
 	color: #FFFFFF;
 	font-size: 2rem;

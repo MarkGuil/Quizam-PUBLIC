@@ -1,6 +1,7 @@
 <?php
 include 'controller.php';
 $room = searchClassRoom($_SESSION['currentUser']['id']);
+$rooms = searchClassRoom($_SESSION['currentUser']['id']);
 
 if (!isActive() or $_SESSION['currentUser']['user_type'] != 1)
     header("location:error404.php");
@@ -16,58 +17,171 @@ if (!isActive() or $_SESSION['currentUser']['user_type'] != 1)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Main</title>
     <link rel="stylesheet" type="text/css" href="css/main2.css">
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
     <?php include 'extentions/bootstrap.php' ?>
 </head>
 
-<body class="">
-    <img class="bkg" src="img/bkg.png" alt="">
+<body class="vh-100">
     <?php include "extentions/navbar.php" ?>
-    <div class=" d-flex justify-content-center align-items-center py-3 py-lg-5">
-        <div class="contaiiner">
-            <div class="row no-gutters">
-                <div class="cl col-sm-5 col-lg-4 no-gutters">
-                    <h1 class="txt ">Class
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#mymodal">
-                            <img id="addc" class="imgg" src="img/add.png" alt="">
-                        </a>
-                    </h1>
-
-                    <?php while ($r = $room->fetch_assoc()) { ?>
-                        <form action="Main.php" method="Post">
-                            <input id='classId' type="hidden" name="classId" value="<?= $r['classroom_id']; ?>">
-                            <div class="nClass col-lg-11 text-start">
-                                <button class="btn btn-light" type="submit" name="classInfo"><span><?= $r['class_name']; ?></span></button>
-                                <a href="" class="dropdownn" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-three-dots" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
-                                    </svg>
-                                </a>
-
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <!-- <button class="btn btn-light" type="submit" name="viewList" style="width: 100%;">List of Students</button> -->
-                                    <button class="btn btn-light" type="submit" name="viewRequest" style="width: 100%;">View Students Requests</button>
-                                    <!-- <button class="btn btn-light" type="submit" name="viewScores" style="width: 100%;">View Students Scores</button> -->
-                                    <button class="btn btn-light" type="submit" name="editName" style="width: 100%;">Rename Classroom</button>
-                                    <button class="btn btn-light" type="submit" name="deleteClass" id="deleteClass" style="width: 100%;">Delete Classroom</button>
-                                </div>
-                        </form>
-                </div>
-
-                <?php $_SESSION['classEmpty'] = false; ?>
-            <?php } ?>
-            <!-- End of New class -->
-            </div>
-
-            <?php if ($_SESSION['classEmpty']) { ?>
-                <div class="col-lg-9">
-                    <div class="text-xs-center text-lg-center">
-                        <form id="form" action="" method="Post" class=" p-5 mt-5">
-                            <img class="mt-5" src="img/none.jpg" alt="" style="margin-top:0;">
-                            <p class="">Don't have any class yet. Try creating one.</p>
-                        </form>
+    <div id="mainSection" class=" d-flex justify-content-center align-items-center flex-column">
+        <div class="w-100 h-100 flex-grow-1">
+            <div class="d-flex flex-column flex-sm-row g-0 h-100">
+                <div class="cl flex-shrink-1 no-gutters">
+                    <div class="d-none d-sm-block">
+                        <h2 class="txt px-3 py-3 m-0">Class
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#mymodal">
+                                <img id="addc" class="imgg" src="img/add.png" alt="">
+                            </a>
+                        </h2>
+                        <div>
+                            <?php while ($r = $room->fetch_assoc()) { ?>
+                                <form action="Main.php" class="py-1" method="Post">
+                                    <input id='classId' type="hidden" name="classId" value="<?= $r['classroom_id']; ?>">
+                                    <div class="nClass">
+                                        <button id="" data-classID="<?= $r['classroom_id']; ?>" class=" overflow-x-hidden text-nowrap w-100 btn shadow text-start py-3 ps-3 text-light border-0 rounded-0 rounded-start-pill <?= isset($_SESSION['currentClassId']) && $_SESSION['currentClassId'] == $r['classroom_id'] ? "active text-center":""  ?>" type="submit" name="classInfo"><span><?= $r['class_name']; ?></span>
+                                        </button>
+                                    </div>
+                                </form>
+                                <?php $_SESSION['classEmpty'] = false; ?>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <div class="d-block d-sm-none px-2 position-sticky top-0">
+                        <div class=" d-flex justify-content-between align-items-center">
+                            <h1 class="txt">Class </h1>
+                            <button id="showClassBtn" class="m-0 border-0 bg-transparent px-3 fs-4"><i class="fa fa-bars text-light" aria-hidden="true"></i></button>
+                        </div>
+                        <div id="classDropdownSection" class="pb-2">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#mymodal" class="overflow-x-hidden d-flex gap-3 justify-content-center align-items-center text-nowrap w-100 btn shadow text-start py-3 my-1 ps-3 text-light border border-white rounded-0"> 
+                                <img id="" class="" height="27px" width="27px" src="img/add.png" alt="">
+                                <span class="m-0">Add New Class</span>
+                            </a>
+                            <?php while ($r = $rooms->fetch_assoc()) { ?>
+                                <form action="Main.php" class="py-1" method="Post">
+                                    <input id='classId' type="hidden" name="classId" value="<?= $r['classroom_id']; ?>">
+                                    <div class="nClass">
+                                        <button id="" data-classID="<?= $r['classroom_id']; ?>" class=" overflow-x-hidden text-nowrap w-100 btn shadow text-start py-3 ps-3 text-light border-0 rounded-0 <?= isset($_SESSION['currentClassId']) && $_SESSION['currentClassId'] == $r['classroom_id'] ? "active text-center":""  ?>" type="submit" name="classInfo"><span><?= $r['class_name']; ?></span>
+                                        </button>
+                                    </div>
+                                </form>
+                                <?php $_SESSION['classEmpty'] = false; ?>
+                            <?php } ?>
+                        </div>
                     </div>
                 </div>
-            <?php } ?>
+
+                <?php if ($_SESSION['classEmpty']) { ?>
+                <div class="py-3 bg-white flex-grow-1 d-flex justify-content-center align-items-center">
+                    <div class="text-xs-center text-lg-center">
+                        <img class="" src="img/none.jpg" width="250px" height="250px" alt="" style="margin-top:0;">
+                        <p class="">Don't have any class yet. Try creating one.</p>
+                    </div>
+                </div>
+                <?php } 
+                if (isset($_SESSION['currentClassId']) && $_SESSION['currentClassId'] != "") {
+                    $room = getClassName($_SESSION['currentClassId']); 
+                ?>
+                <div class="py-3 px-4 px-sm-4 bg-white flex-grow-1 d-flex justify-content-center">
+                    <div class="flex-grow-1">
+                        <h4 class="px-2 py-2"><?= $room['class_name']; ?></h4>
+                        <div class="text-center">
+                            <form action="" class="d-flex flex-column justify-content-center align-items-center align-content-around flex-wrap gap-3" method="POST">
+                                <div class="row w-100">
+                                    <div class=" col-sm-12 col-md-4 col-lg-4 p-2">
+                                        <div class="classroomName d-flex flex-column border h">
+                                            <div class="p-5">
+                                                <i class="fas fa-file-code class-icon"></i>
+                                            </div>
+                                            <div class="description p-1 ">
+                                                <h4 class="text- font-weight-bold"><?= $room['classCode']; ?></h4>
+                                                <br>
+                                                <h5>Class Code</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" col-sm-12 col-md-4 col-lg-4 p-2">
+                                        <div class="classroomName d-flex flex-column border h">
+                                            <div class="p-5">
+                                                <i class="fas fa-users class-icon"></i>
+                                            </div>
+                                            <div class="description p-1">
+                                                <h4 class="text- font-weight-bold"><?= studentCount($_SESSION['currentClassId']); ?></h4>
+                                                <br>
+                                                <button class="btn btn-outline-warning text-dark" type="submit" name="viewStudentList">Students</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" col-sm-12 col-md-4 col-lg-4 p-2">
+                                        <div class="classroomName d-flex flex-column border h">
+                                            <div class="p-5">
+                                                <i class="fas fa-user-plus class-icon"></i>
+                                            </div>
+                                            <div class="description p-1">
+                                                <h4 class="text- font-weight-bold"><?= requestCount($_SESSION['currentClassId']); ?></h4>
+                                                <br>
+                                                <button class="btn btn-outline-warning text-dark" name="viewRequest" type="submit">Requests</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row w-100">
+                                    <div class=" col-sm-12 col-md-4 col-lg-4 p-2">
+                                        <div class="classroomName d-flex flex-column border h">
+                                            <div class="p-5">
+                                                <i class="fas fa-scroll class-icon"></i>
+                                            </div>
+                                            <div class="description p-1">
+                                                <h4 class="text- font-weight-bold">Exams/Quizes</h4>
+                                                <br>
+                                                <button class="btn btn-outline-warning text-dark" name="viewList">View</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" col-sm-12 col-md-4 col-lg-4 p-2">
+                                        <div class="classroomName d-flex flex-column border h">
+                                            <div class="p-5">
+                                                <i class="fas fa-poll-h class-icon"></i>
+                                            </div>
+                                            <div class="description p-1">
+                                                <h4 class="text- font-weight-bold">Scores</h4>
+                                                <br>
+                                                <button class="btn btn-outline-warning text-dark" name="viewScores">View</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" col-sm-12 col-md-4 col-lg-4 p-2">
+                                        <div class="classroomName d-flex flex-column border h">
+                                            <div class="p-5">
+                                                <i class="fas fa-wrench class-icon"></i>
+                                            </div>
+                                            <div class="description p-1">
+                                                <h4 class="text- font-weight-bold">Settings</h4>
+                                                <br>
+                                                <div class="dropdown dropdown-center">
+                                                    <button class="btn btn-outline-warning text-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Action
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                        <input id='classId' type="hidden" name="classId" value="<?= $room['classroom_id']; ?>">
+                                                        <button class="btn btn-light" type="submit" name="editName" style="width: 100%;">Rename Classroom</button>
+                                                        <button class="btn btn-light" type="submit" name="deleteClass" style="width: 100%;">Delete Classroom</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <?php } else { ?>
+                <div class="py-3 bg-white flex-grow-1 d-flex justify-content-center align-items-center">
+                    <div class="text-xs-center text-lg-center">
+                        <img class="mt-5" src="img/none.jpg" width="250px" height="250px" alt="" style="margin-top:0;">
+                    </div>
+                </div>
+                <?php } ?>
         </div>
     </div>
 
@@ -98,7 +212,7 @@ if (!isActive() or $_SESSION['currentUser']['user_type'] != 1)
         </div>
     </div>
     <div class="modal" id="myModal2">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <form method="post">
                     <div class="modal-header bg-primary text-light">
@@ -110,9 +224,7 @@ if (!isActive() or $_SESSION['currentUser']['user_type'] != 1)
                         Please try again.
                     </div>
                     <div class="modal-footer bg-light text-dark">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#mymodal" data-bs-dismiss="modal">
-                            <button class="btn btn-primary" type="submit" name="createClass">Try Again</button>
-                        </a>
+                        <button class="btn btn-primary" type="submit" name="createClassInvalid">Try Again</button>
                     </div>
                 </form>
             </div>
@@ -141,7 +253,7 @@ if (!isActive() or $_SESSION['currentUser']['user_type'] != 1)
         </div>
     </div>
     <div class="modal" id="myModal4">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <form method="post">
                     <div class="modal-header bg-primary text-light">
@@ -149,6 +261,8 @@ if (!isActive() or $_SESSION['currentUser']['user_type'] != 1)
                         <button type="submit" name="renameRoomCancelled" class="btn-close" aria-label="Close"></button>
                     </div>
                     <div class="modal-body bg-light text-dark">
+                        The Classroom name you Entered <br> is already on   the list.
+                        Please try again.
                     </div>
                     <div class="modal-footer bg-light text-dark">
                         <button class="btn btn-primary" type="submit" name="renameRoomCancelled">Close</button>
@@ -158,7 +272,7 @@ if (!isActive() or $_SESSION['currentUser']['user_type'] != 1)
         </div>
     </div>
     <div class="modal" id="myModal5">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <form action="" id=" form_id " method="Post">
                 <div class="modal-content">
                     <div class="modal-header bg-danger text-light">
@@ -214,6 +328,21 @@ if (!isActive() or $_SESSION['currentUser']['user_type'] != 1)
             var element = document.getElementById(" form_id ");
             element.reset()
         }
+    </script>
+    <script>
+        const navbar = document.querySelector(".navbar");
+        const mainSection = document.querySelector("#mainSection");
+        reportWindowSize()
+
+        function reportWindowSize() {
+            mainSection.style.height = (window.innerHeight - navbar.offsetHeight) + "px";
+        }
+
+        window.onresize = reportWindowSize;
+
+        $("#showClassBtn").on("click", function() {
+            $("#classDropdownSection").slideToggle("fast");
+        });
     </script>
 
 </body>

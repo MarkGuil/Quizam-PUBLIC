@@ -11,13 +11,14 @@ include 'controller.php';
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Login</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
 	<?php include 'extentions/bootstrap.php' ?>
 </head>
 
 <body class="overflow-x-hidden vh-100">
 	<img class="bkg" src="img/bkg.png" alt="">
 	<div class="d-md-flex flex-row no-gutters align-items-center min-vh-100 pb-5">
-		<div class="col-12 col-md-6 no-gutters">
+		<div class="col-12 col-md-5 col-xxl-6 no-gutters">
 			<div class="leftside container px-1 py-5 text-center">
 				<div class="wtq">Welcome To <span>Quizam</span></div>
 				<p>This web-app allows you to manage and conduct online<br>
@@ -26,7 +27,7 @@ include 'controller.php';
 				<div class="btn">Learn More</div>
 			</div>
 		</div>
-		<div class="col-12 col-md-6 no-gutters ">
+		<div class="col-12 col-md-7 col-xxl-6 no-gutters ">
 			<div class="rightside">
 				<div class="row no-gutters py-4">
 					<div class="col no-gutters">

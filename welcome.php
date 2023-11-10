@@ -10,6 +10,7 @@ if (!isset($_SESSION['username'])) {
 <head>
 	<title>Login</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
 	<?php include 'extentions/bootstrap.php' ?>
 </head>
 

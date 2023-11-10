@@ -4,6 +4,7 @@
 <head>
   <title>Error404</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
   <?php include 'extentions/bootstrap.php' ?>
 
   <style>

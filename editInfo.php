@@ -12,6 +12,7 @@ if (!isActive())
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Edit Info</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
     <?php include 'extentions/bootstrap.php' ?>
 </head>
 
@@ -126,7 +127,7 @@ if (!isActive())
                             <input type="file" onchange="displayimg(this)" id="profileImage" class="form-control" name="picture" required>
                             <br>
                             <h4>Preview</h4>
-                            <img style="width:60%;" src="<?= $_SESSION['currentUser']['pic_path']; ?>" alt="" onclick="choosepic()" id="profileimg">
+                            <img class="object-fit-cover p-2 border border-2" style="width:250px; height: 250px;" src="<?= $_SESSION['currentUser']['pic_path']; ?>" alt="" onclick="choosepic()" id="profileimg"> 
                         </div>
                 </div>
                 <div class="modal-footer bg-light text-dark">
@@ -206,7 +207,8 @@ endif; ?>
 
 <?php if ($_SESSION['passwordUpdated']) : ?>
     <script>
-        $('#myModal2').modal('show')
+        const myModal2 = new bootstrap.Modal('#myModal2');
+        myModal2.show();
     </script>
 <?php $_SESSION['passwordUpdated'] = false;
 endif; ?>
